@@ -15,6 +15,10 @@ test("return true if the last part is not 0", () => {
     expect (ValidateIpv4Address("122.122.122.1")).toBe(true);
 });
 
+test("return false if the last part is  255", () => {
+    expect (ValidateIpv4Address("122.122.122.255")).toBe(false);
+});
+
 
 
 
