@@ -1,8 +1,9 @@
 const ValidateIpv4Address = (string) => {
-   if(string.split('.').length === 4) {
-       return true;
+    var stringArray = string.split('.');
+   if(stringArray.length === 4) {
+       return stringArray[stringArray.length -1] != "0" ? true:false; 
    }else{
-       return false
+       return false;
    }
 }
 
