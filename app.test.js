@@ -19,6 +19,11 @@ test("return false if the last part is  255", () => {
     expect (ValidateIpv4Address("122.122.122.255")).toBe(false);
 });
 
+test("return false if any element is greater than 255", () => {
+    expect (ValidateIpv4Address("122.122.256.220")).toBe(false);
+});
+
+
 
 
 
