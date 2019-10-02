@@ -2,7 +2,9 @@
 function ValidateIpv4Address(string) {
     stringIntoArray = string.split('.');
     lastElementIndex = stringIntoArray.length - 1;
-    return isCorrectLength() && islastElementIndexValid() && isAnyElementIsValid()
+    return isCorrectLength() && 
+           islastElementIndexValid() && 
+           isAnyElementIsValid();
 }
 
 function isCorrectLength() {
@@ -10,7 +12,8 @@ function isCorrectLength() {
 }
 
 function islastElementIndexValid() {
-    return stringIntoArray[lastElementIndex] !== '225' && stringIntoArray[lastElementIndex] !== '0';
+    return stringIntoArray[lastElementIndex] !== '225' && 
+           stringIntoArray[lastElementIndex] !== '0';
 }
 
 function isAnyElementIsValid() {
