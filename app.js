@@ -4,7 +4,7 @@ function ValidateIpv4Address(string) {
     lastElementIndex = stringIntoArray.length - 1;
     return isCorrectLength() && 
            islastElementIndexValid() && 
-           isAnyElementIsValid();
+           areElementsValid();
 }
 
 function isCorrectLength() {
@@ -16,7 +16,7 @@ function islastElementIndexValid() {
            stringIntoArray[lastElementIndex] !== '0';
 }
 
-function isAnyElementIsValid() {
+function areElementsValid() {
     for (var i = 0; i < stringIntoArray.length; i++) {
         var stringIntoInteger = parseInt(stringIntoArray[i], 10);
         if (stringIntoInteger > 225 || stringIntoInteger < 0)
