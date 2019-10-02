@@ -1,26 +1,27 @@
 
 function ValidateIpv4Address(string) {
-    stringIntoArray = string.split('.')
-    lastElement = stringIntoArray.length - 1
-    return (isCorrectLength(stringIntoArray) && isLastElementValid(stringIntoArray) && isAnyElementIsValid(stringIntoArray))
+    stringIntoArray = string.split('.');
+    lastElement = stringIntoArray.length - 1;
+    return isCorrectLength() && isLastElementValid() && isAnyElementIsValid()
 }
 
-function isCorrectLength(stringIntoArray) {
-    return stringIntoArray.length === 4
+function isCorrectLength() {
+    return lastElement === 3;
 }
 
-function isLastElemetNotZero(stringIntoArray) {
-    return stringIntoArray[lastElement] !== '0'
-}
-function isLastElementNot255(stringIntoArray) {
-    return stringIntoArray[lastElement] !== '225'
+function isLastElemetNotZero() {
+    return stringIntoArray[lastElement] !== '0';
 }
 
-function isLastElementValid(stringIntoArray) {
-    return isLastElementNot255(stringIntoArray) && isLastElemetNotZero(stringIntoArray)
+function isLastElementNot255() {
+    return stringIntoArray[lastElement] !== '225';
 }
 
-function isAnyElementIsValid(stringIntoArray) {
+function isLastElementValid() {
+    return isLastElementNot255() && isLastElemetNotZero();
+}
+
+function isAnyElementIsValid() {
     for (var i = 0; i < stringIntoArray.length; i++) {
         var elementRange = parseInt(stringIntoArray[i], 10);
         if (elementRange > 225 || elementRange < 0)
